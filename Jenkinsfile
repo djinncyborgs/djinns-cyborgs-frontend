@@ -4,12 +4,12 @@ pipeline {
     agent any
     environment {
         ENV_TYPE = "production"
-        PORT = 4162
+        PORT = 4164
         NAMESPACE = "djintech-org"
         REGISTRY_HOSTNAME = "mariiaevd"
         REGISTRY = "registry.hub.docker.com"
-        PROJECT = "djintech-frontend"
-        DEPLOYMENT_NAME = "djintech-frontend-deployment"
+        PROJECT = "djinns-cyborgs-frontend"
+        DEPLOYMENT_NAME = "djinns-cyborgs-frontend-deployment"
         IMAGE_NAME = "${env.BUILD_ID}_${env.ENV_TYPE}_${env.GIT_COMMIT}"
         DOCKER_BUILD_NAME = "${env.REGISTRY_HOSTNAME}/${env.PROJECT}:${env.IMAGE_NAME}"
     }
