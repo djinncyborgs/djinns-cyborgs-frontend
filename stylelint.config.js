@@ -3,7 +3,13 @@ export default {
 
   rules: {
     // camelCase classes
-    'selector-class-pattern': ['^[a-z][a-zA-Z0-9]+$', {message: 'Use camelCase for class names'}],
+    'selector-class-pattern': ['^(visually-hidden|[a-z][a-zA-Z0-9]+)$', {message: 'Use camelCase for class names'}],
+
+    // Allow vendor prefixes (important for normalize.css)
+    'property-no-vendor-prefix': null,
+    'value-no-vendor-prefix': null,
+    'selector-no-vendor-prefix': null,
+    'media-feature-name-no-vendor-prefix': null,
 
     // General rules
     'color-named': 'never',

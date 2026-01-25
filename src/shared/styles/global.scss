@@ -1,0 +1,57 @@
+@import '@/shared/styles/normalize';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $f-size;
+  text-rendering: optimizelegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  @include text;
+
+  overflow-x: hidden;
+
+  font-family: $f-family;
+  color: $light-100;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: currentcolor;
+  text-decoration: none;
+  transition: opacity $transition;
+}
+
+button {
+  @include reset-btn;
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+
+  main {
+    flex-grow: 1;
+  }
+}

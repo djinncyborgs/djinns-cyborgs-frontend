@@ -1,0 +1,129 @@
+// breakpoints
+
+@mixin vp-1279 {
+  @media (max-width: $vp-1280 - 0.02px) {
+    @content;
+  }
+}
+
+@mixin vp-1023 {
+  @media (max-width: $vp-1024 - 0.02px) {
+    @content;
+  }
+}
+
+@mixin vp-767 {
+  @media (max-width: $vp-768 - 0.02px) {
+    @content;
+  }
+}
+
+@mixin vp-479 {
+  @media (max-width: $vp-480 - 0.02px) {
+    @content;
+  }
+}
+
+@mixin vp-375 {
+  @media (max-width: $vp-375 - 0.02px) {
+    @content;
+  }
+}
+
+// retina
+
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+// events
+@mixin hover {
+  @media (hover: hover) {
+    &:hover:not([disabled]) {
+      @content;
+    }
+  }
+}
+
+@mixin focus {
+  &:focus-visible:not([disabled]) {
+    @content;
+  }
+}
+
+@mixin focus-within {
+  &:focus-within:not([disabled]) {
+    @content;
+  }
+}
+
+@mixin active {
+  &:active:not([disabled]) {
+    @content;
+  }
+}
+
+@mixin disabled {
+  &[disabled] {
+    @content;
+  }
+}
+
+@mixin hover-focus {
+  @include hover {
+    @content;
+  }
+
+  @include focus {
+    @content;
+  }
+}
+
+@mixin hover-focus-within {
+  @include hover {
+    @content;
+  }
+
+  @include focus-within {
+    @content;
+  }
+}
+
+// other
+
+@mixin text {
+  font-size: $f-size;
+  font-weight: $f-weight;
+  line-height: $l-height;
+}
+
+@mixin reset-btn {
+  cursor: pointer;
+
+  padding: 0;
+  border: none;
+
+  font-family: inherit;
+
+  background-color: $color-transparent;
+  outline: none;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+
+  overflow: hidden;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+
+  white-space: nowrap;
+
+  /* stylelint-disable-next-line property-no-deprecated */
+  clip: rect(0 0 0 0);
+}
