@@ -1,0 +1,123 @@
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+
+  font-family: $f-family;
+
+  background-color: $dark-100;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: 800px;
+  min-height: 100vh;
+  padding: 120px 60px;
+
+  background-color: $dark-100;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+
+  text-align: left;
+
+  h1 {
+    max-width: 320px;
+
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 48px;
+    color: $light-700;
+    text-wrap: balance;
+    letter-spacing: -2.4px;
+  }
+
+  p {
+    max-width: 440px;
+
+    font-size: 18px;
+    line-height: 32px;
+    color: $light-700;
+    text-wrap: balance;
+  }
+
+  a {
+    font-weight: 500;
+    color: $primary-500;
+  }
+}
+
+.ctas {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+
+  width: 100%;
+  max-width: 440px;
+
+  font-size: 14px;
+
+  a {
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    height: 40px;
+    padding: 0 16px;
+    border: 1px solid transparent;
+    border-radius: 128px;
+
+    font-weight: 500;
+
+    transition: $transition;
+
+    &.primary {
+      gap: 8px;
+      color: $light-100;
+      background: $dark-900;
+
+      @include hover {
+        background: $dark-100;
+      }
+    }
+
+    &.secondary {
+      border-color: $dark-700;
+
+      @include hover {
+        border-color: transparent;
+        background: $dark-500;
+      }
+    }
+  }
+}
+
+@include vp-767 {
+  .main {
+    padding: 48px 24px;
+  }
+
+  .intro {
+    gap: 16px;
+
+    h1 {
+      font-size: 32px;
+      line-height: 40px;
+      letter-spacing: -1.92px;
+    }
+  }
+}
