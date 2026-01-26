@@ -1,5 +1,5 @@
 {
-  "name": "cyborgs",
+  "name": "djintech",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -31,6 +31,7 @@
     "zustand": "^5.0.10"
   },
   "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^5.91.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
