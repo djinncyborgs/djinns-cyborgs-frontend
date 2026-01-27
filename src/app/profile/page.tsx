@@ -1,6 +1,7 @@
 import {redirect} from 'next/navigation';
 
 export default function ProfilePage() {
+  // mock data
   const userId = 123;
   const isAuthenticated = true;
 

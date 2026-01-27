@@ -1,29 +1,23 @@
-import Link from 'next/link';
+import {Metadata} from 'next';
 import {redirect} from 'next/navigation';
-import {CustomLink} from '@/components/CustomLink';
 
-type Props = {
-  searchParams: Promise<Record<string, string>>;
+import SettingsPage from '@/views/Settings';
+
+export const metadata: Metadata = {
+  title: 'Settings Page',
+  description: 'Manage your account settings',
 };
 
-export default async function SettingsPage({searchParams}: Props) {
-  const {part} = await searchParams;
+type Props = {
+  searchParams: Promise<{part?: string}>;
+};
 
-  if (!part) {
-    redirect(`/settings?part=info`);
+export default async function Settings({searchParams}: Props) {
+  const params = await searchParams;
+
+  if (!params.part) {
+    redirect('/settings?part=info');
   }
 
-  return (
-    <div>
-      Settings
-      <hr />
-      <div style={{display: 'flex', gap: '20px'}}>
-        <Link href="/">Main</Link>
-        <CustomLink title={'General information'} param={'part'} value={'info'} />
-        <CustomLink title={'Devices'} param={'part'} value={'devices'} />
-        <CustomLink title={'Account management'} param={'part'} value={'subscriptions'} />
-        <CustomLink title={'My Payments'} param={'part'} value={'payments'} />
-      </div>
-    </div>
-  );
+  return <SettingsPage />;
 }
