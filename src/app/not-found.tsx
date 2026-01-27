@@ -1,10 +1,5 @@
-import Link from 'next/link';
+import NotFoundView from '@/views/notFound';
 
 export default function NotFound() {
-  return (
-    <div>
-      <h2>Not Found</h2>
-      <Link href="/">Return Main</Link>
-    </div>
-  );
+  return <NotFoundView />;
 }

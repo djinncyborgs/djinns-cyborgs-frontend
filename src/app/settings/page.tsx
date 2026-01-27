@@ -1,7 +1,7 @@
 import {Metadata} from 'next';
 import {redirect} from 'next/navigation';
 
-import SettingsPage from '@/views/Settings';
+import SettingsView from '@/views/settings';
 
 export const metadata: Metadata = {
   title: 'Settings Page',
@@ -19,5 +19,5 @@ export default async function Settings({searchParams}: Props) {
     redirect('/settings?part=info');
   }
 
-  return <SettingsPage />;
+  return <SettingsView />;
 }

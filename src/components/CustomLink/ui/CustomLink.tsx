@@ -16,7 +16,7 @@ export const CustomLink = ({title, param, value}: Props) => {
 
   const createQueryString = useCallback(
     (paramName: string, value: string) => {
-      const params = new URLSearchParams(searchParams?.toString());
+      const params = new URLSearchParams(searchParams.toString());
       params.set(paramName, value);
       return params.toString();
     },
