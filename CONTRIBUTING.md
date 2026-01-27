@@ -4,12 +4,14 @@
 
 This document describes guidelines for contributing to the project, including commit messages, code style, and file naming conventions.
 
-## Branches
+## Project Git Flow
+
+### Branches
 
 - "development" — main working branch (default)
 - "main" — production-ready branch
 
-## Developer Workflow
+### Developer Workflow
 
 1. Clone the repository and switch to "development".
 2. Create a feature branch from "development" (e.g., "feature/DT-123").
@@ -19,7 +21,7 @@ This document describes guidelines for contributing to the project, including co
 6. After review and approval, merge the PR into "development".
    > Keep your branch synced with "development" to avoid conflicts.
 
-## Release / Team Lead
+### Release / Team Lead
 
 1. Create a PR from "development" → "main".
 2. CI/CD performs:
@@ -35,7 +37,7 @@ This document describes guidelines for contributing to the project, including co
 5. For bugs, the developer creates a new branch from "development" with a suffix (e.g., "DT-123-2") and repeats the workflow.
 6. When testing is successful, merge code into "main" and move the Jira task to **Done**.
 
-## Best Practices
+### Best Practices
 
 - Merge into "development" only after coordination
 - Keep "development" always stable and up-to-date
