@@ -160,14 +160,14 @@ Example:
 
 ```tsx
 // app/dashboard/page.tsx
-import {DashboardPage} from '@/pages/dashboardPage';
+import {DashboardView} from '@/views/dashboard';
 
 export default function Dashboard() {
-  return <DashboardPage />;
+  return <DashboardView />;
 }
 ```
 
-#### **Pages Layer** (`src/pages/`)
+#### **Views Layer** (`src/views/`)
 
 Page compositions - connects widgets, features, and entities:
 
@@ -181,7 +181,7 @@ Page compositions - connects widgets, features, and entities:
 Example structure:
 
 ```text
-pages/
+views/
 └── homePage/
     ├── ui/
     │   ├── HomePage.tsx
@@ -330,41 +330,17 @@ export {useLogin} from './model/useLogin';
 Follow these import rules to maintain layer independence:
 
 ```text
-app → pages → widgets → features → entities → shared
+app → views → widgets → features → entities → shared
   ↓      ↓        ↓         ↓          ↓         ↓
 Can import from layers below only
 ```
 
 **Examples:**
 
-- ✅ `pages/homePage` can import from `widgets`, `features`, `entities`, `shared`
+- ✅ `views/homePage` can import from `widgets`, `features`, `entities`, `shared`
 - ✅ `features/login` can import from `entities/user`, `shared/components`
 - ❌ `entities/user` **cannot** import from `features/login`
 - ❌ `shared/components` **cannot** import from `entities/user`
-
-## 📝 Code Style Guidelines
-
-This project follows strict code style conventions to maintain consistency and quality.
-
-**Key principles:**
-
-- Follow [Conventional Commits](https://conventionalcommits.org) for commit messages
-- Use PascalCase for components, camelCase for utilities and hooks
-- Maximum 3 levels of SCSS nesting
-- Strict TypeScript with no `any` types
-- Automated import sorting
-
-For detailed guidelines on commit messages, file naming, code conventions, and styling rules, please read **[CONTRIBUTING.md](./CONTRIBUTING.md)**.
-
-## ⚙️ ESLint & Prettier Configuration
-
-The project uses strict TypeScript and Next.js linting rules:
-
-- Strict type checking enabled
-- Unused vars warning (prefixed with `_` allowed)
-- Type definitions preferred over interfaces
-- Import sorting enforced
-- Console statements limited to `warn` and `error`
 
 ## 🚢 Deployment
 

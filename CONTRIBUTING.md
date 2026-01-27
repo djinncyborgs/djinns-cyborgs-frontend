@@ -4,7 +4,7 @@
 
 This document describes guidelines for contributing to the project, including commit messages, code style, and file naming conventions.
 
-## Project Git Flow
+## 🔀 Project Git Flow
 
 ### Branches
 
