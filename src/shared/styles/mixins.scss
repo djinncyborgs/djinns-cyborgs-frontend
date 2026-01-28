@@ -127,3 +127,104 @@
   /* stylelint-disable-next-line property-no-deprecated */
   clip: rect(0 0 0 0);
 }
+
+@mixin display {
+  font-family: $f-font-primary;
+  font-weight: $fw-semibold;
+  font-size: $fs-2xl;
+  line-height: $lh-xl;
+}
+
+@mixin h1 {
+  font-family: $f-font-primary;
+  font-weight: $fw-bold;
+  font-size: $fs-xl;
+  line-height: $lh-xl;
+}
+
+@mixin h2 {
+  font-family: $f-font-primary;
+  font-weight: $fw-bold;
+  font-size: $fs-l;
+  line-height: $lh-s;
+}
+
+@mixin h3 {
+  font-family: $f-font-primary;
+  font-weight: $fw-semibold;
+  font-size: $fs-m;
+  line-height: $lh-s;
+}
+
+@mixin body16 {
+  font-family: $f-font-primary;
+  font-weight: $fw-regular;
+  font-size: $fs-m;
+  line-height: $lh-s;
+}
+
+@mixin body16Bold {
+  font-family: $f-font-primary;
+  font-weight: $fw-bold;
+  font-size: $fs-m;
+  line-height: $lh-s;
+}
+
+@mixin body14 {
+  font-family: $f-font-primary;
+  font-weight: $fw-regular;
+  font-size: $fs-s;
+  line-height: $lh-s;
+}
+
+@mixin body14Medium {
+  font-family: $f-font-primary;
+  font-weight: $fw-medium;
+  font-size: $fs-s;
+  line-height: $lh-s;
+}
+
+@mixin body14Bold {
+  font-family: $f-font-primary;
+  font-weight: $fw-bold;
+  font-size: $fs-s;
+  line-height: $lh-s;
+}
+
+@mixin caption {
+  font-family: $f-font-primary;
+  font-weight: $fw-regular;
+  font-size: $fs-xs;
+  line-height: $lh-xs;
+}
+
+@mixin captionSemibold {
+  font-family: $f-font-primary;
+  font-weight: $fw-semibold;
+  font-size: $fs-xs;
+  line-height: $lh-xs;
+}
+
+@mixin link14 {
+  font-family: $f-font-primary;
+  font-weight: $fw-regular;
+  font-size: $fs-s;
+  line-height: $lh-s;
+
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+
+  color: $primary-500;
+}
+
+@mixin link12 {
+  font-family: $f-font-primary;
+  font-weight: $fw-regular;
+  font-size: $fs-xs;
+  line-height: $lh-xs;
+
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+
+  color: $primary-500;
+}

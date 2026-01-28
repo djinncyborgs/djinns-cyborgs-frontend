@@ -1,105 +1,58 @@
+@import '@/shared/styles/mixins';
+
+.root {
+  margin: 0;
+  color: inherit;
+}
 
 .display {
-  font-weight: 600;
-  font-size: 26px;
-  line-height: 36px;
-  color: inherit;
+  @include display;
 }
 
 .h1 {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 36px;
-  color: inherit;
+  @include h1;
 }
-
 
 .h2 {
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 24px;
-  color: inherit;
+  @include h2;
 }
-
 
 .h3 {
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
-  color: inherit;
+  @include h3;
 }
-
 
 .body16 {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: inherit;
+  @include body16;
 }
-
 
 .body16Bold {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
-  color: inherit;
+  @include body16Bold;
 }
-
 
 .body14 {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
-  color: inherit;
+  @include body14;
 }
-
 
 .body14Medium {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
-  color: inherit;
+  @include body14Medium;
 }
 
-
 .body14Bold {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 24px;
-  color: inherit;
+  @include body14Bold;
 }
 
 .caption {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-  color: inherit;
+  @include caption;
 }
-
 
 .captionSemibold {
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 16px;
-  color: inherit;
+  @include captionSemibold;
 }
-
 
 .link14 {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
-  text-decoration: underline;
-  text-decoration-skip-ink: none;
-  color: $primary-500;
+  @include link14;
 }
 
-
 .link12 {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-  text-decoration: underline;
-  text-decoration-skip-ink: none;
-  color: $primary-500;
+  @include link12;
 }
