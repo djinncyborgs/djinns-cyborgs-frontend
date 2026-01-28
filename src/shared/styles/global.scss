@@ -7,11 +7,6 @@
 }
 
 html {
-  text-rendering: optimizelegibility;
-
-  font-family: var(--font-sans), serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 html,
@@ -25,7 +20,6 @@ body {
 
   overflow-x: hidden;
 
-  //font-family: $f-family;
   font-family: var(--font-sans), sans-serif;
   color: $light-100;
 
