@@ -1,7 +1,7 @@
 import {Metadata} from 'next';
 import {redirect} from 'next/navigation';
 
-import SettingsView from '@/views/settings';
+import {SettingsView} from '@/views/settings';
 
 export const metadata: Metadata = {
   title: 'Settings Page',

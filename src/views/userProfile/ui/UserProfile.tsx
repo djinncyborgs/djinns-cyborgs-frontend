@@ -6,7 +6,7 @@ type Props = {
   id: string;
 };
 
-const UserProfileView = ({id}: Props) => {
+export const UserProfileView = ({id}: Props) => {
   return (
     <div>
       User Profile
@@ -21,5 +21,3 @@ const UserProfileView = ({id}: Props) => {
     </div>
   );
 };
-
-export default UserProfileView;

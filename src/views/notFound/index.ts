@@ -1,1 +1,1 @@
-export {default} from './ui/NotFound';
+export {NotFoundView} from './ui/NotFound';
