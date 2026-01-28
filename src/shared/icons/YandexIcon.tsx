@@ -10,12 +10,12 @@ export const YandexIcon = (props: SVGProps<SVGSVGElement>) => (
       />
       <path
         d="M9.6375 7.13101L6.456 10.3125L15.756 19.6133V30.6698H20.256V19.6013L29.5448 10.3125L26.3633 7.13101L18 15.4943L9.6375 7.13101Z"
-        fill="white"
+        fill="currentColor"
       />
     </g>
     <defs>
       <clipPath id="clip0_26444_7704">
-        <rect width="36" height="36" fill="white" />
+        <rect width="36" height="36" fill="currentColor" />
       </clipPath>
     </defs>
   </svg>
