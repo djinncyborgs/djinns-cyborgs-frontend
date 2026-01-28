@@ -1,0 +1,61 @@
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 279px;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  width: 279px;
+  outline: 1px solid #4C4C4C;
+  border-radius: 2px;
+  padding: 0;
+  position: relative;
+
+  &:focus-within { outline: 2px solid #397DF6; }
+  &:hover { outline: 1px solid #8D9094; }
+  &:active { outline: 1px solid #fff; }
+  &:disabled { outline: 1px solid #4C4C4C; }
+}
+
+.inputContainerError{
+  outline: 1px solid #CC1439;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  height: 36px;
+  width: 100%;
+  padding-right: 40px;
+  background: none;
+
+  &.search { padding-left: 41px; }
+  &.password { padding-left: 10px; }
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.toggleBtn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.errorMessage {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #CC1439;
+}
