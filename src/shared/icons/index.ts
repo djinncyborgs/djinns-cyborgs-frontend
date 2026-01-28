@@ -15,3 +15,4 @@ export * from './SafariIcon';
 export * from './StripeIcon';
 export * from './UcBrowserIcon';
 export * from './YandexIcon';
+export * from './GitHubIcon';

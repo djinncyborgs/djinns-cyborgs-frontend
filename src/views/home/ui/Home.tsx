@@ -8,6 +8,7 @@ import {
   FirefoxIcon,
   FlagRussiaIcon,
   FlagUKIcon,
+  GitHubIcon,
   GoogleIcon,
   MicrosoftEdgeIcon,
   OperaIcon,
@@ -18,8 +19,7 @@ import {
   StripeIcon,
   UcBrowserIcon,
   YandexIcon,
-} from '@/shared/icons/common';
-import {GitHubDarkIcon} from '@/shared/icons/dark-theme';
+} from '@/shared/icons';
 
 import s from './Home.module.scss';
 
@@ -34,7 +34,7 @@ const HomeView = () => {
         <FlagRussiaIcon />
         <FlagUKIcon />
         <FacebookIcon />
-        <GitHubDarkIcon />
+        <GitHubIcon />
         <GoogleIcon />
         <PaidIcon />
         <PayPalIcon />
