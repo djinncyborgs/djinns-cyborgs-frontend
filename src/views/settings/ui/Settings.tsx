@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import {CustomLink} from '@/components/CustomLink';
 
-export const SettingsView = () => {
+const SettingsView = () => {
   return (
     <div>
       Settings
@@ -17,3 +17,5 @@ export const SettingsView = () => {
     </div>
   );
 };
+
+export default SettingsView;

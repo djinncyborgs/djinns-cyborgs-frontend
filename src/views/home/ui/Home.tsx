@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import s from './Home.module.scss';
 
-export const HomeView = () => {
+const HomeView = () => {
   // mock data
   const userId = '123';
 
@@ -13,3 +13,5 @@ export const HomeView = () => {
     </div>
   );
 };
+
+export default HomeView;

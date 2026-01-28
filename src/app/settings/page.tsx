@@ -1,7 +1,7 @@
 import {Metadata} from 'next';
 import {redirect} from 'next/navigation';
 
-import {SettingsView} from '@/views/settings';
+import SettingsView from '@/views/settings';
 
 export const metadata: Metadata = {
   title: 'Settings Page',
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 type Props = {
-  searchParams: Promise<{part?: string}>;
+  searchParams: Promise<{part: string | undefined}>;
 };
 
 export default async function Settings({searchParams}: Props) {

@@ -1,6 +1,6 @@
 import {Metadata} from 'next';
 
-import {HomeView} from '@/views/home';
+import HomeView from '@/views/home';
 
 export const metadata: Metadata = {
   title: 'Home Page',

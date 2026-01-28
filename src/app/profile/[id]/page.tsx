@@ -1,7 +1,7 @@
 import {Metadata} from 'next';
 import {redirect} from 'next/navigation';
 
-import {UserProfileView} from '@/views/userProfile';
+import UserProfileView from '@/views/userProfile';
 
 export const metadata: Metadata = {
   title: 'User Profile Page',

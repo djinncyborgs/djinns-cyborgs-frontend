@@ -1,1 +1,1 @@
-export {UserProfileView} from './ui/UserProfile';
+export {default} from './ui/UserProfile';

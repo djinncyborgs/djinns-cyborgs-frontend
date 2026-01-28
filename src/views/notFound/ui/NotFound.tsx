@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export const NotFoundView = () => {
+const NotFoundView = () => {
   return (
     <div>
       <h2>Not Found</h2>
@@ -8,3 +8,5 @@ export const NotFoundView = () => {
     </div>
   );
 };
+
+export default NotFoundView;
