@@ -23,6 +23,13 @@
   outline: 1px solid #CC1439;
 }
 
+.inputContainerError .input::placeholder {
+  color: #FFFFFF;
+}
+.inputContainerError .input {
+  color: #FFFFFF;
+}
+
 .input {
   flex: 1;
   border: none;
@@ -31,17 +38,36 @@
   width: 100%;
   padding-right: 40px;
   background: none;
+  color: #8D9094;
+
+  &:hover,
+  &:focus {
+    color: #8D9094;
+  }
+  &:active {
+    color: #FFFFFF;
+  }
+
+  &:disabled {
+    color: #4C4C4C;
+  }
 
   &.search { padding-left: 41px; }
   &.password { padding-left: 10px; }
-}
-
-.searchIcon {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
+  &::placeholder {
+    font-size: 16px;
+    color: #8D9094;
+  }
+  &:hover::placeholder,
+  &:focus::placeholder {
+    color: #8D9094;
+  }
+  &:active::placeholder {
+    color: #FFFFFF;
+  }
+  &:disabled::placeholder {
+    color: #4C4C4C;
+  }
 }
 
 .toggleBtn {
@@ -52,10 +78,61 @@
   background: none;
   border: none;
   cursor: pointer;
+
+  svg {
+    color: #FFFFFF;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &:disabled svg {
+    color: #4C4C4C;
+  }
 }
 
 .errorMessage {
   margin-top: 4px;
   font-size: 14px;
   color: #CC1439;
+}
+
+.inputTitle {
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: #8D9094;
+}
+
+.icon {
+  color: #FFFFFF;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #8D9094;
+}
+
+
+.inputContainer:hover .searchIcon,
+.inputContainer:focus-within .searchIcon {
+  color: #8D9094;
+}
+
+
+.inputContainer:active .searchIcon {
+  color: #FFFFFF;
+}
+
+.inputContainerError .searchIcon {
+  color: #FFFFFF;
+}
+
+.inputContainer:disabled .searchIcon {
+  color: #4C4C4C;
 }

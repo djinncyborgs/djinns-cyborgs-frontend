@@ -1,7 +1,10 @@
 'use client';
 
-import Image from 'next/image';
 import React, {useState} from 'react';
+
+import {EyeIcon} from '@/shared/icons/EyeIcon';
+import {EyeOffIcon} from '@/shared/icons/EyeOffIcon';
+import {SearchIcon} from '@/shared/icons/SearchIcon';
 
 import styles from './input.module.scss';
 
@@ -12,9 +15,10 @@ type Props = {
   onChange: (value: string) => void;
   error?: boolean;
   errorText?: string;
+  title?: string;
 };
 
-export const Input = ({ariaLabel, disabled, value, onChange, error, errorText}: Props) => {
+export const Input = ({ariaLabel, disabled, value, onChange, error, errorText, title}: Props) => {
   const [visible, setVisible] = useState(false);
 
   const toggleVisibility = () => {
@@ -33,9 +37,10 @@ export const Input = ({ariaLabel, disabled, value, onChange, error, errorText}: 
 
   return (
     <div className={styles.inputWrapper}>
+      {ariaLabel === 'password' && <span className={styles.inputTitle}>{title ?? 'Email'}</span>}
       <div className={inputContainerClassName}>
         {ariaLabel === 'search' && (
-          <Image className={styles.searchIcon} src="/search-outline.svg" alt={'search'} width={20} height={20} />
+          <SearchIcon className={styles.searchIcon} />
         )}
 
         <input
@@ -56,8 +61,9 @@ export const Input = ({ariaLabel, disabled, value, onChange, error, errorText}: 
             className={styles.toggleBtn}
             onClick={toggleVisibility}
             aria-label={visible ? 'Hide password' : 'Show password'}
+            disabled={disabled}
           >
-            <Image src="/input-button.svg" alt={visible ? 'Hide password' : 'Show password'} width={24} height={24} />
+            {visible ? <EyeOffIcon className={styles.icon} /> : <EyeIcon className={styles.icon} />}
           </button>
         )}
       </div>
