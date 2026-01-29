@@ -17,4 +17,5 @@ const SettingsView = () => {
     </div>
   );
 };
+
 export default SettingsView;
