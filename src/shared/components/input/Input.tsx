@@ -12,13 +12,13 @@ type Props = {
   ariaLabel: string;
   disabled?: boolean;
   value: string;
-  onChange: (value: string) => void;
+  onChangeAction: (value: string) => void;
   error?: boolean;
   errorText?: string;
   title?: string;
 };
 
-export const Input = ({ariaLabel, disabled, value, onChange, error, errorText, title}: Props) => {
+export const Input = ({ariaLabel, disabled, value, onChangeAction, error, errorText, title}: Props) => {
   const [visible, setVisible] = useState(false);
 
   const toggleVisibility = () => {
@@ -39,9 +39,7 @@ export const Input = ({ariaLabel, disabled, value, onChange, error, errorText, t
     <div className={styles.inputWrapper}>
       {ariaLabel === 'password' && <span className={styles.inputTitle}>{title ?? 'Email'}</span>}
       <div className={inputContainerClassName}>
-        {ariaLabel === 'search' && (
-          <SearchIcon className={styles.searchIcon} />
-        )}
+        {ariaLabel === 'search' && <SearchIcon className={styles.searchIcon} />}
 
         <input
           type={inputType}
@@ -50,7 +48,7 @@ export const Input = ({ariaLabel, disabled, value, onChange, error, errorText, t
           aria-label={ariaLabel}
           value={value}
           onChange={(e) => {
-            onChange(e.target.value);
+            onChangeAction(e.target.value);
           }}
           disabled={disabled}
         />
@@ -71,4 +69,3 @@ export const Input = ({ariaLabel, disabled, value, onChange, error, errorText, t
     </div>
   );
 };
-

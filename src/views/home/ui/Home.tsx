@@ -1,4 +1,5 @@
 import Link from 'next/link';
+
 import s from './Home.module.scss';
 
 const HomeView = () => {
@@ -10,6 +11,6 @@ const HomeView = () => {
       <Link href={'/settings?part=info'}>Settings</Link>
     </div>
   );
-};;
+};
 
 export default HomeView;
