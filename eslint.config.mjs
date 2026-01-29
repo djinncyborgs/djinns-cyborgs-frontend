@@ -1,3 +1,4 @@
+import storybook from 'eslint-plugin-storybook';
 import nextCore from 'eslint-config-next/core-web-vitals';
 import nextTs from 'eslint-config-next/typescript';
 import prettierConfig from 'eslint-config-prettier';
@@ -10,16 +11,15 @@ import boundaries from 'eslint-plugin-boundaries';
 
 export default defineConfig([
   {
-    ignores: ['*.config.*', '.next/**', 'out/**', 'build/**', 'node_modules/**', 'coverage/**'],
+    ignores: ['.storybook/**', '*.config.*', '.next/**', 'out/**', 'build/**', 'node_modules/**', 'coverage/**'],
   },
-
   ...nextCore,
   ...nextTs,
   ...tseslint.configs.strictTypeChecked,
   ...tseslint.configs.stylisticTypeChecked,
   ...tanstackQuery.configs['flat/recommended'],
+  ...storybook.configs['flat/recommended'],
   prettierConfig,
-
   {
     files: ['**/*.{ts,tsx}'],
 
