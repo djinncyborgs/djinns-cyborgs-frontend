@@ -13,7 +13,10 @@
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "stylelint": "stylelint \"src/**/*.{css,scss}\"",
-    "stylelint:fix": "stylelint \"src/**/*.{css,scss}\" --fix"
+    "stylelint:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
+    "prepare": "husky install",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -31,6 +34,8 @@
     "zustand": "^5.0.10"
   },
   "devDependencies": {
+    "@storybook/addon-docs": "^10.2.1",
+    "@storybook/nextjs-vite": "^10.2.1",
     "@tanstack/eslint-plugin-query": "^5.91.3",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -39,15 +44,21 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.4",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-boundaries": "^5.3.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-storybook": "^10.2.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "prettier": "^3.8.1",
     "sass": "^1.97.3",
+    "storybook": "^10.2.1",
     "stylelint": "^17.0.0",
     "stylelint-config-clean-order": "^8.0.0",
     "stylelint-config-standard-scss": "^17.0.0",
     "typescript": "^5",
-    "typescript-eslint": "^8.53.1"
+    "typescript-eslint": "^8.53.1",
+    "vite": "^7.3.1"
   }
 }
