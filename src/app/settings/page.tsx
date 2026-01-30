@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 type Props = {
-  searchParams: Promise<{part?: string}>;
+  searchParams: Promise<{part: string | undefined}>;
 };
 
 export default async function Settings({searchParams}: Props) {
