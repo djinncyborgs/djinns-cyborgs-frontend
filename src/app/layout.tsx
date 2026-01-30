@@ -3,6 +3,7 @@ import '@/shared/styles/global.scss';
 import {Metadata} from 'next';
 import {Inter} from 'next/font/google';
 
+import {Providers} from '@/app/providers';
 import {Header} from '@/widgets/header';
 
 const inter = Inter({
@@ -28,11 +29,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body>
-        <div id="root">
-          <Header />
-          <main>{children}</main>
-        </div>
+      <body >
+        <Providers>
+          <div id="root">
+            <Header />
+            <main>{children}</main>
+          </div>
+        </Providers>
       </body>
     </html>
   );
