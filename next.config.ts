@@ -2,10 +2,9 @@ import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
   sassOptions: {
-    silenceDeprecations: ['import'],
     additionalData: `
-      @import '@/shared/styles/variables';
-      @import '@/shared/styles/mixins';
+      @use "@/shared/styles/variables" as *;
+      @use "@/shared/styles/mixins" as *;
     `,
   },
 };

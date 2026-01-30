@@ -11,7 +11,7 @@ import boundaries from 'eslint-plugin-boundaries';
 
 export default defineConfig([
   {
-    ignores: ['.storybook/**', '*.config.*', '.next/**', 'out/**', 'build/**', 'node_modules/**', 'coverage/**'],
+    ignores: ['*.config.*', '.next/**', 'out/**', 'build/**', 'node_modules/**', 'coverage/**'],
   },
   ...nextCore,
   ...nextTs,
@@ -25,7 +25,7 @@ export default defineConfig([
 
     languageOptions: {
       parserOptions: {
-        project: ['./tsconfig.json'],
+        project: ['./tsconfig.json', './.storybook/tsconfig.json'],
         tsconfigRootDir: import.meta.dirname,
       },
     },
