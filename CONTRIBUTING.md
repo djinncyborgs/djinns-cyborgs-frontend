@@ -1,3 +1,5 @@
+<!-- CONTRIBUTING.md -->
+
 # Contribution
 
 **English** | [Русский](./CONTRIBUTING.ru.md)
@@ -87,6 +89,36 @@ fix(auth): add validation for login form
 feat(user): add user avatar component
 refactor(shared): simplify cn utility function
 chore(deps): update next to 16.1.4
+```
+
+## 🪝 Git Hooks
+
+The project uses **Husky** and **lint-staged** to enforce code quality before commits.
+
+### Pre-commit Hook
+
+Automatically runs on `git commit`:
+
+1. **ESLint** - Fixes and checks TypeScript/TSX files
+2. **Stylelint** - Fixes and checks SCSS/CSS files
+3. **Prettier** - Formats all staged files
+
+If any errors remain after auto-fix, the commit will be blocked.
+
+### Setup
+
+Hooks are installed automatically after `pnpm install`. To reinstall manually:
+
+```bash
+pnpm prepare
+```
+
+### Bypass (Not Recommended)
+
+Only in emergencies:
+
+```bash
+git commit --no-verify
 ```
 
 ## 📁 File Naming Conventions
