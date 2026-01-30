@@ -46,6 +46,13 @@
 - **[Stylelint 17](https://stylelint.io)** - Линтинг CSS/SCSS
 - **[TypeScript ESLint 8.53](https://typescript-eslint.io)** - Правила линтинга для TypeScript
 
+### Инструменты разработки
+
+- **[Storybook 10](https://storybook.js.org/)** - Документация UI и песочница для компонентов
+- **[Husky 9](https://github.com/typicode/husky)** - Git-хуки для контроля качества кода
+- **[lint-staged 16](https://github.com/lint-staged/lint-staged)** - Запуск линтеров для staged файлов
+- **[React Query Devtools](https://tanstack.com/query/v5/docs/framework/react/devtools)** - Инструменты разработки для TanStack Query
+
 ## 🚀 Быстрый старт
 
 ### Требования
@@ -70,19 +77,22 @@ pnpm dev
 ```bash
 # Разработка
 pnpm dev                    # Запуск dev-сервера
+pnpm storybook              # Запуск Storybook на порту 6006
 
 # Сборка
 pnpm build                  # Сборка для разработки
-pnpm build:production       # Псевдоним для сборки в продакшн
+pnpm build:production       # Алиас для production сборки
+pnpm build-storybook        # Сборка статического Storybook
 pnpm start                  # Запуск production сервера
 
 # Качество кода
 pnpm lint                  # Запуск ESLint
-pnpm lint:fix              # Исправить ошибки ESLint
-pnpm format                # Проверка форматирования
-pnpm format:fix            # Исправить форматирование
+pnpm lint:fix              # Исправление ошибок ESLint
+pnpm format                # Проверка форматирования кода
+pnpm format:fix            # Исправление форматирования
 pnpm stylelint             # Линтинг стилей
-pnpm stylelint:fix         # Исправить стили
+pnpm stylelint:fix         # Исправление ошибок стилей
+pnpm prepare               # Установка Git-хуков (выполняется автоматически)
 ```
 
 ## 🏗️ Структура проекта
@@ -171,7 +181,7 @@ export default function Dashboard() {
 
 Композиции страниц - связывает widgets, features и entities:
 
-- Одна папка на страницу (например, `homePage/`, `loginPage/`)
+- Одна папка на страницу (например, `home/`, `login/`)
 - Содержит только композицию UI
 - Управляет состоянием на уровне страницы при необходимости
 - Без логики роутинга (обрабатывается в `app/`)
@@ -182,13 +192,13 @@ export default function Dashboard() {
 
 ```text
 views/
-└── homePage/
+└── home/
     ├── ui/
-    │   ├── HomePage.tsx
-    │   └── HomePage.module.scss
+    │   ├── Home.tsx
+    │   └── Home.module.scss
     ├── model/                    # Опционально: состояние страницы
     │   └── useHomeData.ts
-    └── index.ts                  # Public API: export { default } from './ui/HomePage'
+    └── index.ts                  # Public API: export { default } from './ui/Home'
 ```
 
 #### **Widgets слой** (`src/widgets/`)
@@ -337,10 +347,33 @@ app → views → widgets → features → entities → shared
 
 **Примеры:**
 
-- ✅ `views/homePage` может импортировать из `widgets`, `features`, `entities`, `shared`
+- ✅ `views/home` может импортировать из `widgets`, `features`, `entities`, `shared`
 - ✅ `features/login` может импортировать из `entities/user`, `shared/components`
 - ❌ `entities/user` **не может** импортировать из `features/login`
 - ❌ `shared/components` **не может** импортировать из `entities/user`
+
+## 🎨 Разработка компонентов
+
+### Storybook
+
+Документируйте и тестируйте компоненты изолированно:
+
+```bash
+pnpm storybook              # Запуск dev-сервера Storybook
+pnpm build-storybook        # Сборка статического Storybook
+```
+
+Создавайте stories рядом с компонентами:
+
+```text
+shared/
+└── components/
+    └── Button/
+        ├── Button.tsx
+        ├── Button.module.scss
+        ├── Button.stories.tsx      # ← Stories для Storybook
+        └── index.ts
+```
 
 ## 🚢 Развёртывание
 
