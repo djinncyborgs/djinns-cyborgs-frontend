@@ -1,0 +1,136 @@
+.button {
+  min-height: 36px;
+  padding: 6px 24px;
+  border: 2px solid transparent;
+  border-radius: 2px;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 150%;
+  color: #fff;
+  text-align: center;
+
+  // primary
+  &.primary {
+    background: $primary-700;
+
+    @include active {
+      background: $primary-500;
+    }
+
+    @include hover {
+      background: $primary-100;
+    }
+
+    @include focus {
+      border-color: $primary-700;
+      background: $primary-500;
+    }
+
+    @include disabled {
+      cursor: not-allowed;
+      color: $light-900;
+      background: $primary-900;
+    }
+  }
+
+  // secondary
+  &.secondary {
+    background: $dark-300;
+
+    @include active {
+      background: #212121;
+    }
+
+    @include hover {
+      background: $dark-100;
+    }
+
+    @include focus {
+      border-color: $primary-300;
+      background: $dark-300;
+    }
+
+    @include disabled {
+      cursor: not-allowed;
+      color: $light-900;
+      background: $primary-500;
+    }
+  }
+
+  // outline
+  &.outline {
+    border: 1px solid $primary-500;
+    color: $primary-500;
+    background: transparent;
+
+    @include active {
+      border-color: $primary-700;
+      color: $primary-700;
+    }
+
+    @include hover {
+      border-color: $primary-100;
+      color: $primary-100;
+    }
+
+    @include focus {
+      border-color: $primary-700;
+      color: $primary-700;
+    }
+
+    @include disabled {
+      cursor: not-allowed;
+      border-color: $primary-900;
+      color: $primary-900;
+    }
+  }
+
+  // text
+  &.text {
+    min-height: auto;
+    padding: 0;
+    border-color: transparent;
+
+    color: $primary-500;
+
+    background: transparent;
+
+    @include active {
+      color: $primary-700;
+    }
+
+    @include hover {
+      color: $primary-100;
+    }
+
+    @include focus {
+      border-color: $primary-700;
+      color: $primary-500;
+    }
+
+    @include disabled {
+      cursor: not-allowed;
+      color: $primary-900;
+    }
+  }
+
+  // sizes
+  &.sm {
+    min-height: 28px;
+    padding: 4px 12px;
+    font-size: 14px;
+  }
+
+  &.md {
+    min-height: 36px;
+    padding: 6px 24px;
+    font-size: 16px;
+  }
+
+  &.lg {
+    min-height: 44px;
+    padding: 10px 32px;
+    font-size: 18px;
+  }
+}
