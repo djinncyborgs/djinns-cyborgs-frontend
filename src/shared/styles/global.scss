@@ -7,7 +7,6 @@
 }
 
 html {
-  font-size: $f-size;
   text-rendering: optimizelegibility;
 
   -webkit-font-smoothing: antialiased;
@@ -21,11 +20,11 @@ body {
 }
 
 body {
-  @include text;
+  @include typography($fw-regular, $fs-s, $lh-m);
 
   overflow-x: hidden;
 
-  font-family: $f-family;
+  font-family: $f-font-primary;
   color: $light-100;
 
   background-color: $dark-700;

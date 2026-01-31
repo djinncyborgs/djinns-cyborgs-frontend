@@ -50,7 +50,22 @@ $transition-timing-function: ease;
 $transition: $transition-duration $transition-timing-function;
 
 // fonts
-$f-family: 'Arial', 'Helvetica', sans-serif;
-$f-size: 14px;
-$f-weight: 400;
-$l-height: 150%;
+$f-font-primary: var(--font-primary), 'Arial', 'Helvetica', sans-serif;
+
+$fs-xs: 12px;
+$fs-s: 14px;
+$fs-m: 16px;
+$fs-l: 18px;
+$fs-xl: 20px;
+$fs-2xl: 26px;
+
+$lh-xs: 1.333;
+$lh-s: 1.714;
+$lh-m: 1.5;
+$lh-l: 1.8;
+$lh-xl: 1.384;
+
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
