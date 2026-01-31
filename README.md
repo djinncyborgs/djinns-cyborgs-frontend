@@ -46,6 +46,13 @@ Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for details on our code of cond
 - **[Stylelint 17](https://stylelint.io)** - CSS/SCSS linting
 - **[TypeScript ESLint 8.53](https://typescript-eslint.io)** - TypeScript linting rules
 
+### Development Tools
+
+- **[Storybook 10](https://storybook.js.org/)** - UI documentation and component playground
+- **[Husky 9](https://github.com/typicode/husky)** - Git hooks for enforcing code quality
+- **[lint-staged 16](https://github.com/lint-staged/lint-staged)** - Run linters on staged files
+- **[React Query Devtools](https://tanstack.com/query/v5/docs/framework/react/devtools)** - Development tools for TanStack Query
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -70,10 +77,12 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 ```bash
 # Development
 pnpm dev                    # Start development server
+pnpm storybook              # Start Storybook on port 6006
 
 # Build
 pnpm build                  # Build for development
 pnpm build:production       # Alias for production build
+pnpm build-storybook        # Build Storybook static site
 pnpm start                  # Start production server
 
 # Code Quality
@@ -83,6 +92,7 @@ pnpm format                # Check code formatting
 pnpm format:fix            # Fix code formatting
 pnpm stylelint             # Lint styles
 pnpm stylelint:fix         # Fix style issues
+pnpm prepare               # Install Git hooks (runs automatically)
 ```
 
 ## 🏗️ Project Structure
@@ -171,7 +181,7 @@ export default function Dashboard() {
 
 Page compositions - connects widgets, features, and entities:
 
-- One folder per page (e.g., `homePage/`, `loginPage/`)
+- One folder per page (e.g., `home/`, `login/`)
 - Contains only UI composition
 - Manages page-level state if needed
 - No routing logic (handled by `app/`)
@@ -182,13 +192,13 @@ Example structure:
 
 ```text
 views/
-└── homePage/
+└── home/
     ├── ui/
-    │   ├── HomePage.tsx
-    │   └── HomePage.module.scss
+    │   ├── Home.tsx
+    │   └── Home.module.scss
     ├── model/                    # Optional: page-level state
     │   └── useHomeData.ts
-    └── index.ts                  # Public API: export { default } from './ui/HomePage'
+    └── index.ts                  # Public API: export { default } from './ui/Home'
 ```
 
 #### **Widgets Layer** (`src/widgets/`)
@@ -337,10 +347,33 @@ Can import from layers below only
 
 **Examples:**
 
-- ✅ `views/homePage` can import from `widgets`, `features`, `entities`, `shared`
+- ✅ `views/home` can import from `widgets`, `features`, `entities`, `shared`
 - ✅ `features/login` can import from `entities/user`, `shared/components`
 - ❌ `entities/user` **cannot** import from `features/login`
 - ❌ `shared/components` **cannot** import from `entities/user`
+
+## 🎨 Component Development
+
+### Storybook
+
+Document and test components in isolation:
+
+```bash
+pnpm storybook              # Start Storybook dev server
+pnpm build-storybook        # Build static Storybook
+```
+
+Create stories alongside components:
+
+```text
+shared/
+└── components/
+    └── Button/
+        ├── Button.tsx
+        ├── Button.module.scss
+        ├── Button.stories.tsx      # ← Storybook stories
+        └── index.ts
+```
 
 ## 🚢 Deployment
 
