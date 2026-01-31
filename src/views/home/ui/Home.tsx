@@ -10,6 +10,8 @@ const HomeView = () => {
     <div className={s.page}>
       <Link href={`/profile/${userId}`}>Profile</Link>
       <Link href={'/settings?part=info'}>Settings</Link>
+      <Link href={'/privacy-policy'}>Privacy Policy</Link>
+      <Link href={'/service-terms'}>Terms of Service</Link>
     </div>
   );
 };
