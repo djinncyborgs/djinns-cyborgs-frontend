@@ -1,0 +1,165 @@
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 279px;
+}
+
+.inputContainer {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 279px;
+  padding: 0;
+  border-radius: 2px;
+
+  outline: 1px solid #4c4c4c;
+
+  &:focus-within {
+    outline: 2px solid #397df6;
+  }
+
+  &:hover {
+    outline: 1px solid #8d9094;
+  }
+
+  &:active {
+    outline: 1px solid #fff;
+  }
+
+  &:disabled {
+    outline: 1px solid #4c4c4c;
+  }
+}
+
+.inputContainerError {
+  outline: 1px solid #cc1439;
+}
+
+.inputContainerError .input {
+  color: #8d9094;
+}
+
+.input {
+  flex: 1;
+
+  width: 100%;
+  height: 36px;
+  padding-right: 40px;
+  border: none;
+
+  color: #8d9094;
+
+  background: none;
+  outline: none;
+
+  &::placeholder {
+    font-size: 16px;
+    color: #8d9094;
+  }
+
+  &:hover,
+  &:focus {
+    color: #8d9094;
+  }
+
+  &:active {
+    color: #fff;
+  }
+
+  &:disabled {
+    color: #4c4c4c;
+  }
+
+  &.search {
+    padding-left: 41px;
+  }
+
+  &.password {
+    padding-left: 10px;
+  }
+
+  &:hover::placeholder,
+  &:focus::placeholder {
+    color: #8d9094;
+  }
+
+  &:active::placeholder {
+    color: #fff;
+  }
+
+  &:disabled::placeholder {
+    color: #4c4c4c;
+  }
+}
+
+.toggleBtn {
+  cursor: pointer;
+
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+
+  border: none;
+
+  background: none;
+
+  svg {
+    color: #8d9094;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  &:disabled svg {
+    color: #4c4c4c;
+  }
+}
+
+.errorMessage {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #cc1439;
+}
+
+.inputTitle {
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: #8d9094;
+}
+
+.icon {
+  color: #fff;
+}
+
+.searchIcon {
+  pointer-events: none;
+
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+
+  color: #8d9094;
+}
+
+.inputContainer:hover .searchIcon,
+.inputContainer:focus-within .searchIcon {
+  color: #8d9094;
+}
+
+.inputContainer:active .searchIcon {
+  color: #fff;
+}
+
+.inputContainerError .searchIcon {
+  color: #fff;
+}
+
+.inputContainer:disabled .searchIcon {
+  color: #4c4c4c;
+}
