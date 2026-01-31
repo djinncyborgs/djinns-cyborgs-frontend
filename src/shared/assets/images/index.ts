@@ -1,0 +1,1 @@
+export {CongratulationsImage} from './CongratulationsImage';
