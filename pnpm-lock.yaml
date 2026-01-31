@@ -96,6 +96,9 @@ importers:
       husky:
         specifier: ^9.1.7
         version: 9.1.7
+      ignore-loader:
+        specifier: ^0.1.2
+        version: 0.1.2
       lint-staged:
         specifier: ^16.2.7
         version: 16.2.7
@@ -2134,6 +2137,9 @@ packages:
     peerDependenciesMeta:
       typescript:
         optional: true
+
+  ignore-loader@0.1.2:
+    resolution: {integrity: sha512-yOJQEKrNwoYqrWLS4DcnzM7SEQhRKis5mB+LdKKh4cPmGYlLPR0ozRzHV5jmEk2IxptqJNQA5Cc0gw8Fj12bXA==}
 
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
@@ -5458,6 +5464,8 @@ snapshots:
       '@babel/runtime': 7.28.6
     optionalDependencies:
       typescript: 5.9.3
+
+  ignore-loader@0.1.2: {}
 
   ignore@5.3.2: {}
 
