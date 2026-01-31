@@ -7,6 +7,10 @@
 }
 
 html {
+  text-rendering: optimizelegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html,
@@ -16,7 +20,7 @@ body {
 }
 
 body {
-  @include text;
+  @include typography($fw-regular, $fs-s, $lh-m);
 
   overflow-x: hidden;
 

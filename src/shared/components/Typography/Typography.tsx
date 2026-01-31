@@ -1,23 +1,23 @@
 import clsx from 'clsx';
-import {ComponentPropsWithoutRef, ElementType, JSX} from 'react';
 import React from 'react';
+import {ComponentPropsWithoutRef, ElementType, JSX} from 'react';
 
 import styles from './Typography.module.scss';
 
 export type TypographyVariant =
-  | 'display'
+  | 'large'
   | 'h1'
   | 'h2'
   | 'h3'
-  | 'body16'
-  | 'body16Bold'
-  | 'body14'
-  | 'body14Medium'
-  | 'body14Bold'
-  | 'caption'
-  | 'captionSemibold'
-  | 'link14'
-  | 'link12';
+  | 'text-l'
+  | 'text-l-bold'
+  | 'text-m'
+  | 'text-m-medium'
+  | 'text-m-bold'
+  | 'text-s'
+  | 'text-s-semibold'
+  | 'link-m'
+  | 'link-s';
 
 type VariantConfig = {
   defaultTag: keyof JSX.IntrinsicElements;
@@ -25,23 +25,24 @@ type VariantConfig = {
 };
 
 const VARIANTS: Record<TypographyVariant, VariantConfig> = {
-  display: {defaultTag: 'h1', className: styles.display},
-  h1: {defaultTag: 'h1', className: styles.h1},
-  h2: {defaultTag: 'h2', className: styles.h2},
-  h3: {defaultTag: 'h3', className: styles.h3},
+  large: {defaultTag: 'h1', className: styles.textLarge},
 
-  body16: {defaultTag: 'p', className: styles.body16},
-  body16Bold: {defaultTag: 'p', className: styles.body16Bold},
+  h1: {defaultTag: 'h1', className: styles.textH1},
+  h2: {defaultTag: 'h2', className: styles.textH2},
+  h3: {defaultTag: 'h3', className: styles.textH3},
 
-  body14: {defaultTag: 'p', className: styles.body14},
-  body14Medium: {defaultTag: 'p', className: styles.body14Medium},
-  body14Bold: {defaultTag: 'p', className: styles.body14Bold},
+  'text-l': {defaultTag: 'p', className: styles.textL},
+  'text-l-bold': {defaultTag: 'p', className: styles.textLBold},
 
-  caption: {defaultTag: 'p', className: styles.caption},
-  captionSemibold: {defaultTag: 'p', className: styles.captionSemibold},
+  'text-m': {defaultTag: 'p', className: styles.textM},
+  'text-m-medium': {defaultTag: 'p', className: styles.textMMedium},
+  'text-m-bold': {defaultTag: 'p', className: styles.textMBold},
 
-  link14: {defaultTag: 'a', className: styles.link14},
-  link12: {defaultTag: 'a', className: styles.link12},
+  'text-s': {defaultTag: 'p', className: styles.textS},
+  'text-s-semibold': {defaultTag: 'p', className: styles.textSSemibold},
+
+  'link-m': {defaultTag: 'a', className: styles.textLinkM},
+  'link-s': {defaultTag: 'a', className: styles.textLinkS},
 };
 
 type Props<T extends ElementType> = {
@@ -56,7 +57,7 @@ export function Typography<T extends ElementType = 'span'>({variant, as, classNa
   const Component = (as ?? defaultTag) as ElementType;
 
   return (
-    <Component className={clsx(styles.root, variantClass, className)} {...props}>
+    <Component className={clsx(styles.text, variantClass, className)} {...props}>
       {children}
     </Component>
   );

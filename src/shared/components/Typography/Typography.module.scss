@@ -1,58 +1,56 @@
-@import '@/shared/styles/mixins';
-
-.root {
+.text {
   margin: 0;
   color: inherit;
 }
 
-.display {
-  @include display;
+.textLarge {
+  @include large;
 }
 
-.h1 {
+.textH1 {
   @include h1;
 }
 
-.h2 {
+.textH2 {
   @include h2;
 }
 
-.h3 {
+.textH3 {
   @include h3;
 }
 
-.body16 {
-  @include body16;
+.textL {
+  @include text-l;
 }
 
-.body16Bold {
-  @include body16Bold;
+.textLBold {
+  @include text-l-bold;
 }
 
-.body14 {
-  @include body14;
+.textM {
+  @include text-m;
 }
 
-.body14Medium {
-  @include body14Medium;
+.textMMedium {
+  @include text-m-medium;
 }
 
-.body14Bold {
-  @include body14Bold;
+.textMBold {
+  @include text-m-bold;
 }
 
-.caption {
-  @include caption;
+.textS {
+  @include text-s;
 }
 
-.captionSemibold {
-  @include captionSemibold;
+.textSSemibold {
+  @include text-s-semibold;
 }
 
-.link14 {
-  @include link14;
+.textLinkM {
+  @include link-m;
 }
 
-.link12 {
-  @include link12;
+.textLinkS {
+  @include link-s;
 }

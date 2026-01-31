@@ -95,12 +95,6 @@
 
 // other
 
-@mixin text {
-  font-size: $f-size;
-  font-weight: $f-weight;
-  line-height: $l-height;
-}
-
 @mixin reset-btn {
   cursor: pointer;
 
@@ -130,103 +124,68 @@
   clip: rect(0 0 0 0);
 }
 
-@mixin display {
-  font-family: $f-font-primary;
-  font-weight: $fw-semibold;
-  font-size: $fs-2xl;
-  line-height: $lh-xl;
+@mixin typography($weight, $size, $line-height) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+
+@mixin link-base {
+  color: $primary-500;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+@mixin large {
+  @include typography($fw-semibold, $fs-2xl, $lh-xl);
 }
 
 @mixin h1 {
-  font-family: $f-font-primary;
-  font-weight: $fw-bold;
-  font-size: $fs-xl;
-  line-height: $lh-xl;
+  @include typography($fw-bold, $fs-xl, $lh-l);
 }
 
 @mixin h2 {
-  font-family: $f-font-primary;
-  font-weight: $fw-bold;
-  font-size: $fs-l;
-  line-height: $lh-s;
+  @include typography($fw-bold, $fs-l, $lh-xs);
 }
 
 @mixin h3 {
-  font-family: $f-font-primary;
-  font-weight: $fw-semibold;
-  font-size: $fs-m;
-  line-height: $lh-s;
+  @include typography($fw-semibold, $fs-m, $lh-m);
 }
 
-@mixin body16 {
-  font-family: $f-font-primary;
-  font-weight: $fw-regular;
-  font-size: $fs-m;
-  line-height: $lh-s;
+@mixin text-l {
+  @include typography($fw-regular, $fs-m, $lh-m);
 }
 
-@mixin body16Bold {
-  font-family: $f-font-primary;
-  font-weight: $fw-bold;
-  font-size: $fs-m;
-  line-height: $lh-s;
+@mixin text-l-bold {
+  @include typography($fw-bold, $fs-m, $lh-m);
 }
 
-@mixin body14 {
-  font-family: $f-font-primary;
-  font-weight: $fw-regular;
-  font-size: $fs-s;
-  line-height: $lh-s;
+@mixin text-m {
+  @include typography($fw-regular, $fs-s, $lh-s);
 }
 
-@mixin body14Medium {
-  font-family: $f-font-primary;
-  font-weight: $fw-medium;
-  font-size: $fs-s;
-  line-height: $lh-s;
+@mixin text-m-medium {
+  @include typography($fw-medium, $fs-s, $lh-s);
 }
 
-@mixin body14Bold {
-  font-family: $f-font-primary;
-  font-weight: $fw-bold;
-  font-size: $fs-s;
-  line-height: $lh-s;
+@mixin text-m-bold {
+  @include typography($fw-bold, $fs-s, $lh-s);
 }
 
-@mixin caption {
-  font-family: $f-font-primary;
-  font-weight: $fw-regular;
-  font-size: $fs-xs;
-  line-height: $lh-xs;
+@mixin text-s {
+  @include typography($fw-regular, $fs-xs, $lh-xs);
 }
 
-@mixin captionSemibold {
-  font-family: $f-font-primary;
-  font-weight: $fw-semibold;
-  font-size: $fs-xs;
-  line-height: $lh-xs;
+@mixin text-s-semibold {
+  @include typography($fw-semibold, $fs-xs, $lh-xs);
 }
 
-@mixin link14 {
-  font-family: $f-font-primary;
-  font-weight: $fw-regular;
-  font-size: $fs-s;
-  line-height: $lh-s;
-
-  text-decoration: underline;
-  text-decoration-skip-ink: none;
-
-  color: $primary-500;
+@mixin link-m {
+  @include typography($fw-regular, $fs-s, $lh-s);
+  @include link-base;
 }
 
-@mixin link12 {
-  font-family: $f-font-primary;
-  font-weight: $fw-regular;
-  font-size: $fs-xs;
-  line-height: $lh-xs;
-
-  text-decoration: underline;
-  text-decoration-skip-ink: none;
-
-  color: $primary-500;
+@mixin link-s {
+  @include typography($fw-regular, $fs-xs, $lh-xs);
+  @include link-base;
 }
