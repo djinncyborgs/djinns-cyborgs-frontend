@@ -16,9 +16,19 @@ type Props = {
   error?: boolean;
   errorText?: string;
   title?: string;
+  textOfPlaceholder?: string;
 };
 
-export const Input = ({ariaLabel, disabled, value, onChangeAction, error, errorText, title}: Props) => {
+export const Input = ({
+  ariaLabel,
+  disabled,
+  value,
+  onChangeAction,
+  error,
+  errorText,
+  title,
+  textOfPlaceholder,
+}: Props) => {
   const [visible, setVisible] = useState(false);
 
   const toggleVisibility = () => {
@@ -29,7 +39,7 @@ export const Input = ({ariaLabel, disabled, value, onChangeAction, error, errorT
     ariaLabel === 'search' ? styles.search : ariaLabel === 'password' ? styles.password : ''
   }`;
 
-  const placeholder = ariaLabel === 'search' ? 'Input search' : 'Epam@epam.com';
+  const placeholder = textOfPlaceholder ?? (ariaLabel === 'search' ? 'Input search' : 'Epam@epam.com');
 
   const inputType = ariaLabel === 'password' ? (visible ? 'text' : 'password') : 'text';
 
