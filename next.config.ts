@@ -8,7 +8,6 @@ const nextConfig: NextConfig = {
     `,
   },
 
-  // Конфигурация для Turbopack
   turbopack: {
     rules: {
       '*.stories.{ts,tsx,js,jsx}': {
@@ -17,7 +16,6 @@ const nextConfig: NextConfig = {
     },
   },
 
-  // Конфигурация для webpack (для production build)
   webpack: (config) => {
     config.module.rules.push({
       test: /\.stories\.(ts|tsx|js|jsx)$/,

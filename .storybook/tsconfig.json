@@ -3,6 +3,5 @@
   "compilerOptions": {
     "types": ["node"]
   },
-  "include": ["**/*", "../**/*.stories.ts", "../**/*.stories.tsx"],
-  "exclude": []
+  "include": ["**/*", "../**/*.stories.ts", "../**/*.stories.tsx"]
 }
